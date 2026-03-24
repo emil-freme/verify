@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH --job-name=questao_02           # nome do job
+#SBATCH --output=output_omp.out         # arquivo de saída
+#SBATCH --partition=normal
+#SBATCH --time=00:05:00                 # tempo máximo de execução
+#SBATCH --mem=2G                        # Memória 
+#SBATCH --nodes=2			# Nós de computação
+#SBATCH --ntasks=4			# Processos
+#SBATCH --cpus-per-task=8               #  threads para usar
+
+# garante que o OpenMP use exatamente os recursos alocados pelo SLURM
+export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
+
+# executa o binário
+mpirun -np $SLURM_NTASKS ./meu_binario

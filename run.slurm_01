@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH --job-name=questao_01           # nome do job
+#SBATCH --output=output_omp.out         # arquivo de saída
+#SBATCH --cpus-per-task=4               # 4 threads para usar
+#SBATCH --time=00:05:00                 # tempo máximo de execução
+#SBATCH --mem=2G                        # Memória 
+
+# garante que o OpenMP use exatamente os recursos alocados pelo SLURM
+export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
+
+# executa o binário
+./meu_binario
