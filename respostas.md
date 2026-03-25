@@ -33,7 +33,7 @@ foi pedido, e utiliza diversas métricas para esse fornecimento.
 
 Pontos de atenção: 
 
-- Define com precisão o SLURgqjM como um gerenciador de recursos e escalonador de trabalhos (jobs) no cluster.
+- Define com precisão o SLURM como um gerenciador de recursos e escalonador de trabalhos (jobs) no cluster.
 - Compreende que a alocação do hardware é feita sob demanda, baseando-se nos
 recursos que o usuário pede de forma explícita, como partições, tempo,
 memória e núcleos.
